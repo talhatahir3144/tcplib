@@ -117,6 +117,7 @@ class TCP:
 		try:
 			" this kind of socket requires root privs. "
 			self.socks = socket.socket( socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_RAW )
+			return 0
 		except Exception as E:
 			return ("unable to create sockets! error: %s\n" % str(E))
 	
