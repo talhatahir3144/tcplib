@@ -156,7 +156,7 @@ class TCP:
 	
 	import tcp	# import tcp library
 	flags = [ 0, 1, 0, 0, 0, 0 ]	# decide flags
-	t		= tcp.TCP()				# define t and send packet
+	t	= tcp.TCP()				# define t and send packet
 	sent 	= t.sendPacket("192.168.100.4", "192.168.100.1", 512, 0, 3136, 80, flags, 456, 412, 0, 0, "")
 	if send:
 		print "ok, packet sent"
@@ -208,7 +208,7 @@ class TCP:
 		ip_header	= struct.unpack("!BBHHHBBH4s4s", ip_header)
 		version_ihl	= ip_header[0]
 		version		= version_ihl >> 4
-		ihl			= version_ihl & 0xF
+		ihl		= version_ihl & 0xF
 		iph_length	= ihl * 4
 		
 		" get tcp header "
@@ -217,8 +217,8 @@ class TCP:
 		
 		src_port	= tcph[0]
 		dest_port	= tcph[1]
-		seq			= tcph[2]
-		ack			= tcph[3]
+		seq		= tcph[2]
+		ack		= tcph[3]
 		doff_res	= tcph[4]
 		flags		= tcph[5]
 		tcph_len	= doff_res >> 4
